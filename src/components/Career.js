@@ -1,6 +1,6 @@
 function Career({ title, tags, summary, description }) {
   return (
-    <div className="career" key={title}>
+    <div className="career">
       <img className="career-img" width="100px"></img>
       <div className="career-info">
         <h3 className="career-title">{title}</h3>
