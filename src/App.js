@@ -4,6 +4,7 @@ import BACKGROUND_VIDEO from "./video/background.mp4";
 import PROFILE_IMG from "./img/profile.jpeg";
 import Content from "./components/Content";
 import Project from "./components/Project";
+import Career from "./components/Career";
 
 function App() {
   return (
@@ -59,21 +60,12 @@ function App() {
       </Content>
       {/* Careers */}
       <Content id="Careers" title="Careers">
-        <div className="career">
-          <img className="career-img" width="100px"></img>
-          <div className="career-info">
-            <h3 className="career-title">(주)아틀라스네트웍스</h3>
-            <ul className="career-tags">
-              <li>2020.06 ~ 현재</li>
-              <li>NS팀 / 대리</li>
-            </ul>
-            <p className="career-summary">XDN ...</p>
-            <div className="career-description">
-              <h4 className="career-description-title">서비스 ...</h4>
-              <p className="career-description-body">입사 ~~</p>
-            </div>
-          </div>
-        </div>
+        <Career
+          title="(주)아틀라스네트웍스"
+          tags={["2020.06 ~ 현재", "NS팀 / 대리"]}
+          summary="XDN ..."
+          description={[{ title: "서비스", body: "입사 ~~" }]}
+        ></Career>
       </Content>
       {/* Contact */}
       <Content id="Contact" title="Contact">
