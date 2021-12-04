@@ -24,13 +24,13 @@ function App() {
       </header>
       {/* topnav */}
       <div className="topnav grid">
-        <a href="#">
+        <a href="#header">
           <img src={LOGO} className="logo col-1"></img>
         </a>
-        <a href="#">About me</a>
-        <a href="#">Projects</a>
-        <a href="#">Career</a>
-        <a href="#">Contact</a>
+        <a href="#about-me">About me</a>
+        <a href="#projects">Projects</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
         <div className="col-3"></div>
         <a href="#">KakaoTalk</a>
         <a href="#">Instagram</a>
