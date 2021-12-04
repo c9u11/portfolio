@@ -1,6 +1,6 @@
 import "./App.css";
 import LOGO from "./img/logo.png";
-import BACKGROUND_VIDEO from "./img/background.mp4";
+import BACKGROUND_VIDEO from "./video/background.mp4";
 import PROFILE_IMG from "./img/profile.jpeg";
 
 function App() {
