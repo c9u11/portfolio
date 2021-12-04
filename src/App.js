@@ -1,81 +1,105 @@
 import "./App.css";
-import LOGO from "./img/logo.png";
-import BACKGROUND_VIDEO from "./video/background.mp4";
-import PROFILE_IMG from "./img/profile.jpeg";
 import Content from "./components/Content";
 import Project from "./components/Project";
 import Career from "./components/Career";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({});
+  useEffect(async () => {
+    await (await fetch("data.json")).json().then((json) => {
+      setData(json);
+      setLoading(false);
+    });
+  }, []);
   return (
     <div>
-      {/* header */}
-      <header className="header">
-        <video
-          className="background"
-          src={BACKGROUND_VIDEO}
-          autoPlay
-          muted
-          loop
-        ></video>
-        <span className="intro">
-          안녕하세요, 열정 가득한 <br /> 웹 프론트엔드 개발자 황석영입니다.
-        </span>
-      </header>
-      {/* topnav */}
-      <div className="topnav grid">
-        <a href="#header">
-          <img src={LOGO} className="logo col-1"></img>
-        </a>
-        <a href="#about-me">About me</a>
-        <a href="#projects">Projects</a>
-        <a href="#career">Career</a>
-        <a href="#contact">Contact</a>
-        <div className="col-3"></div>
-        <a href="#">KakaoTalk</a>
-        <a href="#">Instagram</a>
-        <a href="#">Github</a>
+      {loading ? (
         <div></div>
-      </div>
-      {/* About me */}
-      <Content id="about-me" title="About me">
-        <p>
-          저는 프로그래밍에 지속적인 관심을 갖고 성장하는 개발자입니다. 주로
-          Javascript와 Golang을 사용하여 개발하고있습니다. 관심 분야는 기존
-          시스템을 보완하고 더 많은 콘텐츠와 서비스를 웹 또는 앱을 통하여
-          제공하는 것입니다. 최근에는 Javascript 프레임워크와 최신 라이브러리를
-          사용하는 개발에 열정을 쏟고있습니다.
-        </p>
-        <img src={PROFILE_IMG} width="100px"></img>
-      </Content>
-      {/* Projects */}
-      <Content id="projects" title="Projects">
-        <Project
-          imgURL=""
-          title="VOD Editor"
-          summary="summary"
-          description="description"
-          tags={["tag1", "tag2"]}
-        ></Project>
-      </Content>
-      {/* Careers */}
-      <Content id="Careers" title="Careers">
-        <Career
-          title="(주)아틀라스네트웍스"
-          tags={["2020.06 ~ 현재", "NS팀 / 대리"]}
-          summary="XDN ..."
-          description={[{ title: "서비스", body: "입사 ~~" }]}
-        ></Career>
-      </Content>
-      {/* Contact */}
-      <Content id="Contact" title="Contact">
-        <ul className="contact-list">
-          <li>
-            <span className="contact-list-title">Call</span>
-            <a className="contact-list-body">T.+82 (0)10 - 7182 - 0284</a>
-          </li>
-        </ul>
-      </Content>
+      ) : (
+        <div>
+          {/* header */}
+          <header className="header">
+            <video
+              className="background"
+              src={data.backgroundVideo}
+              autoPlay
+              muted
+              loop
+            ></video>
+            <span className="intro">
+              {data.intro.start}
+              <span className="intro-highlight"></span>
+              {data.intro.end}
+            </span>
+          </header>
+          {/* topnav */}
+          <div className="topnav grid">
+            <a href="#header">
+              <img src={data.logo} className="logo col-1"></img>
+            </a>
+            <a href="#about-me">About me</a>
+            <a href="#projects">Projects</a>
+            <a href="#career">Career</a>
+            <a href="#contact">Contact</a>
+            <div className="col-3"></div>
+            <a href={data.links.kakaotalk}>KakaoTalk</a>
+            <a href={data.links.instagram}>Instagram</a>
+            <a href={data.links.github}>Github</a>
+            <div></div>
+          </div>
+          {/* About me */}
+          <Content id="about-me" title="About me">
+            <p>{data.aboutMe}</p>
+            <img src={data.profile} width="100px"></img>
+          </Content>
+          {/* Projects */}
+          <Content id="projects" title="Projects">
+            {data.projects.map((json, index) => {
+              return (
+                <Project
+                  key={`project-${index}`}
+                  imgURL={json.imgURL}
+                  title={json.title}
+                  summary={json.summary}
+                  description={json.description}
+                  tags={json.tags}
+                ></Project>
+              );
+            })}
+          </Content>
+          {/* Careers */}
+          <Content id="careers" title="Careers">
+            {data.careers.map((json, index) => {
+              return (
+                <Career
+                  key={`career-${index}`}
+                  title={json.title}
+                  tags={json.tags}
+                  summary={json.summary}
+                  description={json.description}
+                ></Career>
+              );
+            })}
+          </Content>
+          {/* Contact */}
+          <Content id="contact" title="Contact">
+            <ul className="contact-list">
+              {data.contact.map((json, index) => {
+                return (
+                  <li key={`contact-${index}`}>
+                    <span className="contact-list-title">{json.title}</span>
+                    <a className="contact-list-body" href={json.href}>
+                      {json.text}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </Content>
+        </div>
+      )}
     </div>
   );
 }
