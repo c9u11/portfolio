@@ -3,6 +3,7 @@ import LOGO from "./img/logo.png";
 import BACKGROUND_VIDEO from "./video/background.mp4";
 import PROFILE_IMG from "./img/profile.jpeg";
 import Content from "./components/Content";
+import Project from "./components/Project";
 
 function App() {
   return (
@@ -48,21 +49,13 @@ function App() {
       </Content>
       {/* Projects */}
       <Content id="projects" title="Projects">
-        <div className="project">
-          <img className="project-img" width="100px"></img>
-          <div className="project-info">
-            <h3 className="project-title">VOD Editor</h3>
-            <p className="project-summary">J사 ...</p>
-            <p className="project-description">영상을 ...</p>
-            <ul className="project-tags">
-              <li>Golang</li>
-              <li>Javascript</li>
-              <li>Nginx</li>
-              <li>API</li>
-              <li>JWT</li>
-            </ul>
-          </div>
-        </div>
+        <Project
+          imgURL=""
+          title="VOD Editor"
+          summary="summary"
+          description="description"
+          tags={["tag1", "tag2"]}
+        ></Project>
       </Content>
       {/* Careers */}
       <Content id="Careers" title="Careers">
