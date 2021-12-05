@@ -6,12 +6,27 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const [data, setData] = useState({});
+  const handleResize = (event) => console.log(event);
+  const handleScroll = () => {
+    const headerHeight = document.getElementById("header").clientHeight;
+    const topnavHeight = document.getElementById("topnav").clientHeight;
+    const windowY = window.scrollY;
+    if (windowY >= headerHeight - topnavHeight) setScrolled(true);
+    else setScrolled(false);
+  };
   useEffect(async () => {
     await (await fetch("data.json")).json().then((json) => {
       setData(json);
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("scroll", handleScroll);
       setLoading(false);
     });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <div>
@@ -20,7 +35,7 @@ function App() {
       ) : (
         <div>
           {/* header */}
-          <header className="header">
+          <header className="header" id="header">
             <video
               className="background"
               src={data.backgroundVideo}
@@ -31,22 +46,43 @@ function App() {
             <span className="intro">
               {data.intro.start}
               <span className="intro-highlight"></span>
+              <br />
               {data.intro.end}
             </span>
           </header>
           {/* topnav */}
-          <div className="topnav grid">
-            <a href="#header">
-              <img src={data.logo} className="logo col-1"></img>
+          <div
+            id="topnav"
+            className={`topnav grid ${scrolled ? "scrolled" : ""}`}
+          >
+            <a className="home logo" href="#header">
+              <img
+                src={scrolled ? data.logo : data.logoWhite}
+                className="logo col-1"
+              ></img>
             </a>
-            <a href="#about-me">About me</a>
-            <a href="#projects">Projects</a>
-            <a href="#career">Career</a>
-            <a href="#contact">Contact</a>
+            <a className="text-link" href="#about-me">
+              About me
+            </a>
+            <a className="text-link" href="#projects">
+              Projects
+            </a>
+            <a className="text-link" href="#careers">
+              Career
+            </a>
+            <a className="text-link" href="#contact">
+              Contact
+            </a>
             <div className="col-3"></div>
-            <a href={data.links.kakaotalk}>KakaoTalk</a>
-            <a href={data.links.instagram}>Instagram</a>
-            <a href={data.links.github}>Github</a>
+            <a
+              className="icon-link Kakaotalk-icon"
+              href={data.links.kakaotalk}
+            ></a>
+            <a
+              className="icon-link Instagram-icon"
+              href={data.links.instagram}
+            ></a>
+            <a className="icon-link Github-icon" href={data.links.github}></a>
             <div></div>
           </div>
           {/* About me */}

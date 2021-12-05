@@ -1,6 +1,7 @@
 .content {
   grid-column: 2 / 12;
   width: 100%;
+  margin-top: 5rem;
 }
 
 .content .content-title {
