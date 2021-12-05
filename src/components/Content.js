@@ -1,3 +1,5 @@
+import "./Content.css";
+
 function Content({ id, title, children }) {
   return (
     <div className="grid" id={id}>

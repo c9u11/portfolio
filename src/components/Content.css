@@ -1,0 +1,12 @@
+.content {
+  grid-column: 2 / 12;
+  width: 100%;
+}
+
+.content .content-title {
+  font-size: 4.1rem;
+}
+
+.content .content-body {
+  font-size: 1.6rem;
+}
