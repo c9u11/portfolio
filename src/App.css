@@ -97,3 +97,51 @@
   font-size: 4.1rem;
   color: white;
 }
+
+/* about me */
+#about-me {
+  background-color: #fbf9f9;
+}
+
+#about-me .content-body {
+  display: flex;
+  align-items: center;
+}
+
+#about-me .content-body p {
+  flex: 1;
+  margin-right: 10%;
+}
+#about-me .content-body .img-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 20%;
+  height: auto;
+  border-radius: 50%;
+}
+#about-me .content-body .img-wrapper:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+#about-me .content-body .img-wrapper img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#careers {
+  background-color: #e2e5e6;
+}
+#careers .content-title {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translate(0px, -50%) rotate(270deg);
+  color: white;
+  text-decoration: underline;
+}

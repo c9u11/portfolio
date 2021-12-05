@@ -1,7 +1,10 @@
+import "./Career.css";
 function Career({ title, tags, summary, description }) {
   return (
     <div className="career">
-      <img className="career-img" width="100px"></img>
+      <div className="career-img-wrapper">
+        <img className="career-img"></img>
+      </div>
       <div className="career-info">
         <h3 className="career-title">{title}</h3>
         <ul className="career-tags">

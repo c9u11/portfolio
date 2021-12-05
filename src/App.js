@@ -88,7 +88,9 @@ function App() {
           {/* About me */}
           <Content id="about-me" title="About me">
             <p>{data.aboutMe}</p>
-            <img src={data.profile} width="100px"></img>
+            <div className="img-wrapper">
+              <img src={data.profile}></img>
+            </div>
           </Content>
           {/* Projects */}
           <Content id="projects" title="Projects">
@@ -96,6 +98,7 @@ function App() {
               return (
                 <Project
                   key={`project-${index}`}
+                  index={index}
                   imgURL={json.imgURL}
                   title={json.title}
                   summary={json.summary}
