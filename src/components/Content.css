@@ -2,6 +2,7 @@
   grid-column: 2 / 12;
   width: 100%;
   margin: 5% 0px;
+  max-width: 1280px;
 }
 
 .content .content-title {
