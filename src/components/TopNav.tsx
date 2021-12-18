@@ -3,8 +3,8 @@ import styled from "styled-components";
 const TopNavWrapper = styled.div`
   position: fixed;
   top: 0%;
+  font-size : 1.6rem;
   z-index: 1;
-  background-color: transparent;
   transition: all 0.5s;
   * {
     grid-column-end: span 1;
@@ -13,11 +13,36 @@ const TopNavWrapper = styled.div`
   a {
     cursor: pointer;
   }
+
+
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(5rem, auto);
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: center;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    display: flex;
+    font-size : 1.4rem;
+    grid-gap: unset;
+  }
+  @media screen and (max-width: 479px) {
+    display: flex;
+    font-size : 1rem;
+    grid-gap: unset;
+  }
 `;
 const Logo = styled.a`
   img{
     width: 100%;
     height: auto;
+  }
+  @media screen and (min-width:480px) and (max-width:767px) {
+    width: 50px;
+  }
+  @media screen and (max-width: 479px) {
+    width: 50px;
   }
 `;
 const MenuIcon = styled.a<{ color?: string }>`
@@ -26,7 +51,6 @@ const MenuIcon = styled.a<{ color?: string }>`
   text-align: center;
   color: ${props => props.color};
   font-weight: bold;
-  font-size: 16px;
   text-decoration: none;
   &:after{
     content: "";
@@ -44,9 +68,36 @@ const MenuIcon = styled.a<{ color?: string }>`
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+  @media screen and (min-width:480px) and (max-width:767px) {
+    width: auto;
+    padding: 10px;
+  }
+  @media screen and (max-width: 479px) {
+    width: auto;
+    padding: 10px;
+  }
 `;
-const Spacer = styled.div<{ unit: string }>`
+const FlexSpacer = styled.div`
+  display:none;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    display:block;
+    flex: 1;
+    max-width: none;
+  }
+  @media screen and (max-width: 479px) {
+    display:block;
+    flex: 1;
+    max-width: none;
+  }
+`
+const GridSpacer = styled.div<{ unit: string }>`
   grid-column-end: span ${props => props.unit};
+  @media screen and (min-width:480px) and (max-width:767px) {
+    display:none;
+  }
+  @media screen and (max-width: 479px) {
+    display:none;
+  }
 `
 const HoverImage = styled.a<{ img: string, hoverImg: string }>`
   width: 100%;
@@ -58,6 +109,12 @@ const HoverImage = styled.a<{ img: string, hoverImg: string }>`
   background-image:url(${props => props.img});
   &:hover{
   background-image:url(${props => props.hoverImg});
+  }
+  @media screen and (min-width:480px) and (max-width:767px) {
+    display:none;
+  }
+  @media screen and (max-width: 479px) {
+    display:none;
   }
 `;
 
@@ -74,21 +131,21 @@ function TopNav({ logo, links, scrolled }: ITopNav) {
   const scrolledColor = scrolled ? "#a5936e" : "white";
 
   return (
-    <TopNavWrapper className="grid" style={{
+    <TopNavWrapper style={{
       backgroundColor: scrolled ? "white" : "transparent"
     }}>
       <Logo href="#header" className={scrolled ? "scrolled" : ""}>
         <img src={logo || ""} alt="Logo"></img>
       </Logo>
+      <FlexSpacer></FlexSpacer>
       <MenuIcon color={scrolledColor} href="#about-me">About me</MenuIcon>
       <MenuIcon color={scrolledColor} href="#projects">Projects</MenuIcon>
       <MenuIcon color={scrolledColor} href="#careers">Career</MenuIcon>
       <MenuIcon color={scrolledColor} href="#contacts">Contact</MenuIcon>
-      <Spacer unit="3"></Spacer>
+      <GridSpacer unit="4"></GridSpacer>
       <HoverImage href={links?.kakaotalk || ""} img="/icon/kakao-talk.png" hoverImg="/icon/kakao-talk-hover.png"></HoverImage>
       <HoverImage href={links?.instagram || ""} img="/icon/instagram.png" hoverImg="/icon/instagram-hover.png"></HoverImage>
       <HoverImage href={links?.github || ""} img="/icon/github.png" hoverImg="/icon/github-hover.png"></HoverImage>
-      <Spacer unit="1"></Spacer>
     </TopNavWrapper>
   )
 

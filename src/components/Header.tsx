@@ -21,9 +21,15 @@ const Intro = styled.span`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 41px;
+  font-size: 4.2rem;
   color: white;
   white-space: nowrap;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    font-size: 2.7rem;
+  }
+  @media screen and (max-width: 479px) {
+    font-size: 1.6rem;
+  }
 `;
 
 interface IHeader {

@@ -65,6 +65,9 @@ font-family: 'Source Sans Pro', sans-serif;
     text-decoration: none;
     color: inherit;
   }
+  html {
+    font-size: 62.5%;
+  }
 `
 
 function App() {
