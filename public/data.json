@@ -39,6 +39,7 @@
   ],
   "careers":[
     {
+      "imgURL": "img/atlas_logo.png",
       "title":"(주)아틀라스네트웍스",
       "tags":["2020.06 ~ 현재", "NS팀 / 대리"],
       "summary":"XDN 자체 서비스와 SI Project를 진행하는 업체입니다.\n팀의 리더로써 풀스택 웹 개발 및 총괄 업무를 담당하고있으며 프론트엔드 위주의 프로젝트를 진행하고있습니다.",
@@ -62,7 +63,7 @@
       ]
     }
   ],
-  "contact": [
+  "contacts": [
       {"title":"Call","text":"T.+82 (0)10 - 7182 - 0284", "href":"01071820284"},
       {"title":"Kakaotalk","text":"c9u11","href":"kakaotalk"}
   ],
