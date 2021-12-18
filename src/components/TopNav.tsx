@@ -1,11 +1,13 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { scrolledAtom } from "../atoms";
 
 const TopNavWrapper = styled.div`
   position: fixed;
   top: 0%;
+  transition: all 0.3s;
   font-size : 1.6rem;
   z-index: 1;
-  transition: all 0.5s;
   * {
     grid-column-end: span 1;
     max-width: 96px;
@@ -120,22 +122,23 @@ const HoverImage = styled.a<{ img: string, hoverImg: string }>`
 
 interface ITopNav {
   logo: string | undefined;
+  scrolledLogo: string | undefined;
   links: {
     kakaotalk: string | undefined;
     instagram: string | undefined;
     github: string | undefined;
   } | undefined;
-  scrolled: boolean;
 }
-function TopNav({ logo, links, scrolled }: ITopNav) {
+function TopNav({ logo, scrolledLogo, links }: ITopNav) {
+  const scrolled = useRecoilValue(scrolledAtom)
   const scrolledColor = scrolled ? "#a5936e" : "white";
 
   return (
-    <TopNavWrapper style={{
+    <TopNavWrapper id="topnav" style={{
       backgroundColor: scrolled ? "white" : "transparent"
     }}>
       <Logo href="#header" className={scrolled ? "scrolled" : ""}>
-        <img src={logo || ""} alt="Logo"></img>
+        <img src={(scrolled ? scrolledLogo : logo) || ""} alt="Logo"></img>
       </Logo>
       <FlexSpacer></FlexSpacer>
       <MenuIcon color={scrolledColor} href="#about-me">About me</MenuIcon>

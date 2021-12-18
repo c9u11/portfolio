@@ -2,6 +2,8 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Portfolio from "./pages/Portfolio";
 import { ReactQueryDevtools } from "react-query/devtools"
 import { lightTheme } from "./theme";
+import { scrolledAtom } from "./atoms";
+import { useSetRecoilState } from "recoil";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -75,7 +77,7 @@ function App() {
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle>
       </GlobalStyle>
-      <Portfolio></Portfolio>
+      <Portfolio ></Portfolio>
       <ReactQueryDevtools initialIsOpen={true} />
     </ThemeProvider>
   );
