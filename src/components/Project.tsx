@@ -20,14 +20,33 @@ box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 `;
 const Info = styled("div")`
   padding: 10px;
+  font-size: 1.6rem;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    font-size: 1.4rem;
+  }
+  @media screen and (max-width: 479px) {
+    font-size: 1.2rem;
+  }
 `;
 const Title = styled("h3")`
   color: #a5936e;
-  font-size: 24px;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    font-size: 2.4rem;
+  }
+  @media screen and (max-width: 479px) {
+    font-size: 2.2rem;
+  }
 `;
-const Summary = styled("p")`
-font-weight: bold;`;
-const Description = styled("p")``;
+const Summary = styled("pre")`
+font-weight: bold;
+white-space: break-spaces;
+margin-bottom: 10px;`;
+const Description = styled("pre")`
+white-space: break-spaces;
+margin-bottom: 10px;`;
 const Tags = styled("ul")``;
 const Tag = styled("li")`
   display: inline-block;
