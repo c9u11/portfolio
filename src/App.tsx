@@ -2,12 +2,8 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Portfolio from "./pages/Portfolio";
 import { ReactQueryDevtools } from "react-query/devtools"
 import { lightTheme } from "./theme";
-import { scrolledAtom } from "./atoms";
-import { useSetRecoilState } from "recoil";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
-font-family: 'Source Sans Pro', sans-serif;
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -59,7 +55,6 @@ font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
   }
   body {
-    font-family: 'Source Sans Pro', sans-serif;
     background-color: ${props => props.theme.bgColor};
     color: ${props => props.theme.primaryTextColor};
   }
@@ -69,6 +64,194 @@ font-family: 'Source Sans Pro', sans-serif;
   }
   html {
     font-size: 62.5%;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  .grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(5rem, auto);
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+  }
+  .grid .col-1 {
+    grid-column-end: span 1;
+  }
+  .grid .row-1 {
+    grid-row-end: span 1;
+  }
+  .grid .col-2 {
+    grid-column-end: span 2;
+  }
+  .grid .row-2 {
+    grid-row-end: span 2;
+  }
+  .grid .col-3 {
+    grid-column-end: span 3;
+  }
+  .grid .row-3 {
+    grid-row-end: span 3;
+  }
+  .grid .col-4 {
+    grid-column-end: span 4;
+  }
+  .grid .row-4 {
+    grid-row-end: span 4;
+  }
+  .grid .col-5 {
+    grid-column-end: span 5;
+  }
+  .grid .row-5 {
+    grid-row-end: span 5;
+  }
+  .grid .col-6 {
+    grid-column-end: span 6;
+  }
+  .grid .row-6 {
+    grid-row-end: span 6;
+  }
+  .grid .col-7 {
+    grid-column-end: span 7;
+  }
+  .grid .row-7 {
+    grid-row-end: span 7;
+  }
+  .grid .col-8 {
+    grid-column-end: span 8;
+  }
+  .grid .row-8 {
+    grid-row-end: span 8;
+  }
+  .grid .col-9 {
+    grid-column-end: span 9;
+  }
+  .grid .row-9 {
+    grid-row-end: span 9;
+  }
+  .grid .col-10 {
+    grid-column-end: span 10;
+  }
+  .grid .row-10 {
+    grid-row-end: span 10;
+  }
+  .grid .col-11 {
+    grid-column-end: span 11;
+  }
+  .grid .row-11 {
+    grid-row-end: span 11;
+  }
+  .grid .col-full,
+  .grid .col-12 {
+    grid-column: 1 / 13;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  .grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(5rem, auto);
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+  }
+  .grid .col-1 {
+    grid-column-end: span 1;
+  }
+  .grid .row-1 {
+    grid-row-end: span 1;
+  }
+  .grid .col-2 {
+    grid-column-end: span 2;
+  }
+  .grid .row-2 {
+    grid-row-end: span 2;
+  }
+  .grid .col-3 {
+    grid-column-end: span 3;
+  }
+  .grid .row-3 {
+    grid-row-end: span 3;
+  }
+  .grid .col-4 {
+    grid-column-end: span 4;
+  }
+  .grid .row-4 {
+    grid-row-end: span 4;
+  }
+  .grid .col-5 {
+    grid-column-end: span 5;
+  }
+  .grid .row-5 {
+    grid-row-end: span 5;
+  }
+  .grid .col-6 {
+    grid-column-end: span 6;
+  }
+  .grid .row-6 {
+    grid-row-end: span 6;
+  }
+  .grid .col-7 {
+    grid-column-end: span 7;
+  }
+  .grid .row-7 {
+    grid-row-end: span 7;
+  }
+  .grid .col-8 {
+    grid-column-end: span 8;
+  }
+  .grid .row-8 {
+    grid-row-end: span 8;
+  }
+  .grid .col-9 {
+    grid-column-end: span 9;
+  }
+  .grid .row-9 {
+    grid-row-end: span 9;
+  }
+  .grid .col-10 {
+    grid-column-end: span 10;
+  }
+  .grid .row-10 {
+    grid-row-end: span 10;
+  }
+  .grid .col-11 {
+    grid-column-end: span 11;
+  }
+  .grid .row-11 {
+    grid-row-end: span 11;
+  }
+  .grid .col-full,
+  .grid .col-12 {
+    grid-column: 1 / 13;
   }
 `
 

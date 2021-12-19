@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { ICareer } from "../Interface/interface";
 import Content from "./Content";
 
-const ContentBody = styled.div`
+const ContentBody = styled("div")`
   display: flex;
   align-items: flex-start;
 `;
-const ImgWrapper = styled.div`
+const ImgWrapper = styled("div")`
   position: relative;
   overflow: hidden;
   width: 15%;
@@ -20,7 +20,7 @@ const ImgWrapper = styled.div`
     padding-top: 100%;
   }
 `;
-const Img = styled.img`
+const Img = styled("img")`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,17 +29,17 @@ const Img = styled.img`
   height: auto;
   background-color: white;
 `;
-const Info = styled.div`
+const Info = styled("div")`
   padding: 0px 20px;
   flex: 1;
 `;
-const Title = styled.h3`
+const Title = styled("h3")`
   color: #a5936e;
   font-size: 24px;
 `;
-const Summary = styled.p`
+const Summary = styled("p")`
 font-weight: bold;`;
-const Description = styled.div``;
+const Description = styled("div")``;
 const DescriptionTitle = styled.h4``;
 const DescriptionBody = styled.p``;
 const Tags = styled.ul``;
@@ -60,9 +60,9 @@ function Career({ careers }: ICareers) {
     <Content id="careers" title="Career" style={{ backgroundColor: "#e2e5e6" }}>
       {careers?.map((career, index) => {
         return (
-          <ContentBody>
+          <ContentBody key={index}>
             <ImgWrapper>
-              <Img src={career.imgURL || ""}></Img>
+              <Img src={process.env.PUBLIC_URL + career.imgURL || ""}></Img>
             </ImgWrapper>
             <Info>
               <Title>{career.title}</Title>

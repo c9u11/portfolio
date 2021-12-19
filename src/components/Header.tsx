@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled("header")`
   position: relative;
   &:before {
     content: "";
@@ -12,11 +12,11 @@ const HeaderWrapper = styled.header`
     background-color: rgba(0, 0, 0, 0.2);
   }
 `;
-const BackgroundVideo = styled.video`
+const BackgroundVideo = styled("video")`
   width: 100%;
   height: auto;
 `;
-const Intro = styled.span`
+const Intro = styled("span")`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -42,7 +42,7 @@ interface IHeader {
 function Header({ backgroundVideo, intro }: IHeader) {
   return (
     <HeaderWrapper id="header">
-      <BackgroundVideo loop={true} muted={true} autoPlay src={backgroundVideo || ""}></BackgroundVideo>
+      <BackgroundVideo loop={true} muted={true} autoPlay src={process.env.PUBLIC_URL + backgroundVideo || ""}></BackgroundVideo>
       <Intro>{intro?.start || ""}<br />{intro?.end || ""}</Intro>
     </HeaderWrapper>
   )

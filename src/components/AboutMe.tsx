@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Content from "./Content";
-const ContentBody = styled.div`
+const ContentBody = styled("div")`
   display: flex;
   align-items: center;
 `;
-const Intro = styled.p`
+const Intro = styled("p")`
   flex: 1;
   margin-right: 10%;
 `;
-const ImgWrapper = styled.div`
+const ImgWrapper = styled("div")`
   position: relative;
   overflow: hidden;
   width: 20%;
@@ -21,7 +21,7 @@ const ImgWrapper = styled.div`
     padding-top: 100%;
   }
 `;
-const Img = styled.img`
+const Img = styled("img")`
   position: absolute;
   width: 100%;
   height: auto;
@@ -40,7 +40,7 @@ function AboutMe({ aboutMe, profile }: IAboutMe) {
       <ContentBody>
         <Intro>{aboutMe || ""}</Intro>
         <ImgWrapper>
-          <Img src={profile || ""}></Img>
+          <Img src={process.env.PUBLIC_URL + profile || ""}></Img>
         </ImgWrapper>
       </ContentBody>
     </Content>

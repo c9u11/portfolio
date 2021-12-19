@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { scrolledAtom } from "../atoms";
 
-const TopNavWrapper = styled.div`
+const TopNavWrapper = styled("div")`
   position: fixed;
   top: 0%;
   transition: all 0.3s;
@@ -35,7 +35,7 @@ const TopNavWrapper = styled.div`
     grid-gap: unset;
   }
 `;
-const Logo = styled.a`
+const Logo = styled("a")`
   img{
     width: 100%;
     height: auto;
@@ -47,7 +47,7 @@ const Logo = styled.a`
     width: 50px;
   }
 `;
-const MenuIcon = styled.a<{ color?: string }>`
+const MenuIcon = styled("a") <{ color?: string }>`
   width: 100%;
   position: relative;
   text-align: center;
@@ -79,7 +79,7 @@ const MenuIcon = styled.a<{ color?: string }>`
     padding: 10px;
   }
 `;
-const FlexSpacer = styled.div`
+const FlexSpacer = styled("div")`
   display:none;
   @media screen and (min-width:480px) and (max-width:767px) {
     display:block;
@@ -92,7 +92,7 @@ const FlexSpacer = styled.div`
     max-width: none;
   }
 `
-const GridSpacer = styled.div<{ unit: string }>`
+const GridSpacer = styled("div") <{ unit: string }>`
   grid-column-end: span ${props => props.unit};
   @media screen and (min-width:480px) and (max-width:767px) {
     display:none;
@@ -101,7 +101,7 @@ const GridSpacer = styled.div<{ unit: string }>`
     display:none;
   }
 `
-const HoverImage = styled.a<{ img: string, hoverImg: string }>`
+const HoverImage = styled("a") <{ img: string, hoverImg: string }>`
   width: 100%;
   height: 50%;
   background-position: center;
@@ -132,13 +132,12 @@ interface ITopNav {
 function TopNav({ logo, scrolledLogo, links }: ITopNav) {
   const scrolled = useRecoilValue(scrolledAtom)
   const scrolledColor = scrolled ? "#a5936e" : "white";
-
   return (
     <TopNavWrapper id="topnav" style={{
       backgroundColor: scrolled ? "white" : "transparent"
     }}>
       <Logo href="#header" className={scrolled ? "scrolled" : ""}>
-        <img src={(scrolled ? scrolledLogo : logo) || ""} alt="Logo"></img>
+        <img src={process.env.PUBLIC_URL + (scrolled ? scrolledLogo : logo) || ""} alt="Logo"></img>
       </Logo>
       <FlexSpacer></FlexSpacer>
       <MenuIcon color={scrolledColor} href="#about-me">About me</MenuIcon>
@@ -146,9 +145,9 @@ function TopNav({ logo, scrolledLogo, links }: ITopNav) {
       <MenuIcon color={scrolledColor} href="#careers">Career</MenuIcon>
       <MenuIcon color={scrolledColor} href="#contacts">Contact</MenuIcon>
       <GridSpacer unit="4"></GridSpacer>
-      <HoverImage href={links?.kakaotalk || ""} img="/icon/kakao-talk.png" hoverImg="/icon/kakao-talk-hover.png"></HoverImage>
-      <HoverImage href={links?.instagram || ""} img="/icon/instagram.png" hoverImg="/icon/instagram-hover.png"></HoverImage>
-      <HoverImage href={links?.github || ""} img="/icon/github.png" hoverImg="/icon/github-hover.png"></HoverImage>
+      <HoverImage href={links?.kakaotalk || ""} img={`${process.env.PUBLIC_URL}/icon/kakao-talk.png`} hoverImg={`${process.env.PUBLIC_URL}/icon/kakao-talk-hover.png`}></HoverImage>
+      <HoverImage href={links?.instagram || ""} img={`${process.env.PUBLIC_URL}/icon/instagram.png`} hoverImg={`${process.env.PUBLIC_URL}/icon/instagram-hover.png`}></HoverImage>
+      <HoverImage href={links?.github || ""} img={`${process.env.PUBLIC_URL}/icon/github.png`} hoverImg={`${process.env.PUBLIC_URL}/icon/github-hover.png`}></HoverImage>
     </TopNavWrapper>
   )
 

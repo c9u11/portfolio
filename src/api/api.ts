@@ -1,3 +1,3 @@
 export function fetchPortfolioData() {
-  return fetch(`/data.json`).then(res => res.json());
+  return fetch(`${process.env.PUBLIC_URL}/data.json`).then(res => res.json());
 }

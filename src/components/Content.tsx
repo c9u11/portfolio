@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled("div")`
 `;
-const ContentWrapper = styled.div`
+const ContentWrapper = styled("div")`
   display: flex;
   flex-direction: column;
   grid-column: 2 / 12;
@@ -10,7 +10,7 @@ const ContentWrapper = styled.div`
   margin: 5% 0px;
   max-width: 1280px;
 `;
-const ContentTitle = styled.h2`
+const ContentTitle = styled("h2")`
   font-size: 41px;
   margin-bottom: 20px;
 `
