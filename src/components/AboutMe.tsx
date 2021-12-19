@@ -14,6 +14,7 @@ const Intro = styled("pre")`
   margin-right: 10%;
   font-size: 1.6rem;
   white-space: break-spaces;
+  color: ${props => props.theme.primaryTextColor};
   @media screen and (min-width:480px) and (max-width:767px) {
     font-size: 1.4rem;
   }

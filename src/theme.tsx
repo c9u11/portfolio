@@ -2,11 +2,11 @@ import { DefaultTheme } from "styled-components";
 
 export const lightTheme: DefaultTheme = {
   bgColor: "white",
-  borderColor: "#C4C9D4",
-  primaryTextColor: "#363C49",
-  secondaryTextColor: "#58627D",
+  borderColor: "#a5936e",
+  primaryTextColor: "#222222",
+  secondaryTextColor: "#555555",
   errorColor: "#B42818",
-  accentColor: "#FF9500",
-  boxBgColor: "#FFFFFF",
-  boxTextColor: "#555c6e"
+  accentColor: "#a5936e",
+  boxBgColor: "#C2BAB1",
+  boxTextColor: "#AAAAAA"
 }

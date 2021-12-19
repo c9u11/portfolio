@@ -11,7 +11,7 @@ grid-gap: 10px;
 margin: 30px 0px;
 `;
 const Img = styled("img") <{ order: number }>`
-background-color: bisque;
+background-color: ${props => props.theme.boxBgColor};
 width: 100%;
 height: 100%;
 border-radius: 10px;
@@ -29,7 +29,7 @@ const Info = styled("div")`
   }
 `;
 const Title = styled("h3")`
-  color: #a5936e;
+  color: ${props => props.theme.accentColor};
   font-size: 3.2rem;
   margin-bottom: 20px;
   font-weight: bold;
@@ -43,8 +43,10 @@ const Title = styled("h3")`
 const Summary = styled("pre")`
 font-weight: bold;
 white-space: break-spaces;
-margin-bottom: 10px;`;
+margin-bottom: 10px;
+color: ${props => props.theme.primaryTextColor};`;
 const Description = styled("pre")`
+color: ${props => props.theme.secondaryTextColor};
 white-space: break-spaces;
 margin-bottom: 10px;`;
 const Tags = styled("ul")``;

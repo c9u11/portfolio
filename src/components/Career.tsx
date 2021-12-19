@@ -32,24 +32,52 @@ const Img = styled("img")`
 const Info = styled("div")`
   padding: 0px 20px;
   flex: 1;
+  font-size: 1.6rem;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 479px) {
+    font-size: 1.0rem;
+  }
 `;
 const Title = styled("h3")`
-  color: #a5936e;
-  font-size: 24px;
+color: ${props => props.theme.primaryTextColor};
+font-size: 2.4rem;
+margin-bottom: 20px;
+font-weight: bold;
+@media screen and (min-width:480px) and (max-width:767px) {
+  font-size: 2.2rem;
+}
+@media screen and (max-width: 479px) {
+  font-size: 2.0rem;
+}
 `;
-const Summary = styled("p")`
-font-weight: bold;`;
-const Description = styled("div")``;
-const DescriptionTitle = styled.h4``;
-const DescriptionBody = styled.p``;
-const Tags = styled.ul``;
+const Summary = styled("pre")`
+font-weight: bold;
+white-space: break-spaces;
+margin-bottom: 10px;
+color: ${props => props.theme.primaryTextColor};
+`;
+const Description = styled("div")`
+color: ${props => props.theme.secondaryTextColor};`;
+const DescriptionTitle = styled.h4`
+font-weight: bold`;
+const DescriptionBody = styled.pre`
+white-space: break-spaces;
+margin-bottom: 10px;
+color: ${props => props.theme.secondaryTextColor};`;
+const Tags = styled.ul`
+  margin: 10px 0px;
+`;
 const Tag = styled.li`
   display: inline-block;
   list-style: none;
   padding: 5px;
   margin: 5px;
-  border: #a5936e solid 1px;
+  border: #afcfe1 solid 3px;
   border-radius: 10px;
+  background-color: #afcfe1;
+  color: white;
 `;
 interface ICareers {
   careers: ICareer[] | undefined;
@@ -57,7 +85,7 @@ interface ICareers {
 
 function Career({ careers }: ICareers) {
   return (
-    <Content id="careers" title="Career" style={{ backgroundColor: "#e2e5e6" }}>
+    <Content id="careers" title="Career" style={{ backgroundColor: "#e2e5e6", color: "white" }}>
       {careers?.map((career, index) => {
         return (
           <ContentBody key={index}>
