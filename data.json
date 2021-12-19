@@ -16,23 +16,23 @@
   ,
   "projects": [
     {
-      "imgURL":"",
+      "imgURL":"/img/VODEditor.png",
       "title":"VOD Editor",
-      "summary":"J사의 컨텐츠 등록 및 편집 시스템 (2021.05.01~2021.05.01)",
+      "summary":"J사의 컨텐츠 등록 및 편집 시스템 (2021.05 ~ 2021.10)",
       "description":"영상을 서버로 업로드하거나 CMS에서 정보를 가져와 편집 할 수 있는 시스템입니다. J사의 시스템을 분석 및 개선하여 웹을 통해 사용자 편의 및  속도 개선의 효과가 있었습니다.",
       "tags":["Golang","Javascript", "Nginx", "API", "JWT"]
     },
     {
-      "imgURL":"",
+      "imgURL":"/img/LiveClipper.png",
       "title":"Live Clipper",
-      "summary":"J사의 클립 추출 시스템 (2021.05.01~2021.05.01)",
+      "summary":"J사의 클립 추출 시스템 (2020.11 ~ 2021.05)",
       "description":"실시간으로 진행되는 인터넷 방송이나 라이브 뉴스에서 일정 구간을 클립으로 추출하기 위한 편집 시스템입니다. 인터넷 기사 영상 삽입이나 인터넷 방송 핫클립을 간편하게 만들 수 있습니다. ",
       "tags":["Golang","Javascript", "Nginx", "API", "JWT"]
     },
     {
-      "imgURL":"",
+      "imgURL":"/img/WebPlayer.png",
       "title":"Video Player",
-      "summary":"M사의 동영상 플레이어 (2021.05.01~2021.05.01)",
+      "summary":"M사의 동영상 플레이어 (2020.6 ~ 2021.12)",
       "description":"2020년 12월 31을 기준으로 Flash Player의 지원 종료를 대비하여 디자이너와 협업하여 다양한 기능을 갖춘 플레이어를 개발하였습니다.",
       "tags":["Javascript","VideoJS","Jquery","API","Library"]
     }
@@ -65,11 +65,13 @@
   ],
   "contacts": [
       {"title":"Call","text":"T.+82 (0)10 - 7182 - 0284", "href":"01071820284"},
-      {"title":"Kakaotalk","text":"c9u11","href":"kakaotalk"}
+      {"title":"Kakaotalk","text":"c9u11","href":"http://qr.kakao.com/talk/niWpDKltAuJWZBjxfR99ht_Sv3U-"},
+      {"title":"Instagram","text":"c9u11","href":"https://www.instagram.com/c_9u11/?hl=ko"},
+      {"title":"Github","text":"c9u11","href":"https://github.com/c9u11"}
   ],
   "links": {
-    "kakaotalk":"",
-    "instagram":"",
-    "github":""
+    "kakaotalk":"http://qr.kakao.com/talk/niWpDKltAuJWZBjxfR99ht_Sv3U-",
+    "instagram":"https://www.instagram.com/c_9u11/?hl=ko",
+    "github":"https://github.com/c9u11"
   }
 }
