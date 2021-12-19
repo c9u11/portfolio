@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ReactTypingEffect from 'react-typing-effect';
 
 const HeaderWrapper = styled("header")`
   position: relative;
@@ -32,6 +33,9 @@ const Intro = styled("span")`
   @media screen and (max-width: 479px) {
     font-size: 1.6rem;
   }
+  span {
+    font-weight: bold;
+  }
 `;
 
 interface IHeader {
@@ -39,13 +43,15 @@ interface IHeader {
   intro: {
     start: string;
     end: string;
+    highlights: string[];
   } | undefined;
 }
 function Header({ backgroundVideo, intro }: IHeader) {
+  console.log(intro);
   return (
     <HeaderWrapper id="header">
       <BackgroundVideo loop={true} muted={true} autoPlay src={process.env.PUBLIC_URL + backgroundVideo || ""}></BackgroundVideo>
-      <Intro>{intro?.start || ""}<br />{intro?.end || ""}</Intro>
+      <Intro>{intro?.start || ""} <ReactTypingEffect text={intro?.highlights || []} eraseDelay={1000} typingDelay={1000}></ReactTypingEffect><br />{intro?.end || ""}</Intro>
     </HeaderWrapper>
   )
 }
