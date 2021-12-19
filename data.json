@@ -1,8 +1,8 @@
 {
-  "logo":"%PUBLIC_URL%/img/logo.png",
-  "logoWhite":"%PUBLIC_URL%/img/logo_white.png",
-  "backgroundVideo":"%PUBLIC_URL%/video/background.mp4",
-  "profile":"%PUBLIC_URL%/img/profile.jpeg",
+  "logo":"/img/logo.png",
+  "logoWhite":"/img/logo_white.png",
+  "backgroundVideo":"/video/background.mp4",
+  "profile":"/img/profile.jpeg",
   "intro":{
     "start":"안녕하세요,",
     "highlights":[
@@ -39,7 +39,7 @@
   ],
   "careers":[
     {
-      "imgURL": "%PUBLIC_URL%/img/atlas_logo.png",
+      "imgURL": "img/atlas_logo.png",
       "title":"(주)아틀라스네트웍스",
       "tags":["2020.06 ~ 현재", "NS팀 / 대리"],
       "summary":"XDN 자체 서비스와 SI Project를 진행하는 업체입니다.\n팀의 리더로써 풀스택 웹 개발 및 총괄 업무를 담당하고있으며 프론트엔드 위주의 프로젝트를 진행하고있습니다.",
