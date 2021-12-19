@@ -65,8 +65,8 @@
   ],
   "contacts": [
       {"title":"Call","text":"T.+82 (0)10 - 7182 - 0284", "href":"01071820284"},
-      {"title":"Kakaotalk","text":"c9u11","href":"http://qr.kakao.com/talk/niWpDKltAuJWZBjxfR99ht_Sv3U-"},
-      {"title":"Instagram","text":"c9u11","href":"https://www.instagram.com/c_9u11/?hl=ko"},
+      {"title":"Kakaotalk","text":"c9u11 (모바일만 가능합니다)","href":"http://qr.kakao.com/talk/niWpDKltAuJWZBjxfR99ht_Sv3U-"},
+      {"title":"Instagram","text":"c_9u11","href":"https://www.instagram.com/c_9u11/?hl=ko"},
       {"title":"Github","text":"c9u11","href":"https://github.com/c9u11"}
   ],
   "links": {
