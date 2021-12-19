@@ -13,7 +13,7 @@ margin: 30px 0px;
 const Img = styled("img") <{ order: number }>`
 background-color: ${props => props.theme.boxBgColor};
 width: 100%;
-height: 100%;
+height: auto;
 border-radius: 10px;
 order: ${props => props.order};
 box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
