@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const HeaderWrapper = styled("header")`
   position: relative;
+  max-height: 50vh;
   &:before {
     content: "";
     position: absolute;
