@@ -3,10 +3,26 @@ import Content from "./Content";
 const ContentBody = styled("div")`
   display: flex;
   align-items: center;
+  @media screen and (min-width:480px) and (max-width:767px) {
+  }
+  @media screen and (max-width: 479px) {
+    flex-direction: column;
+  }
 `;
-const Intro = styled("p")`
+const Intro = styled("pre")`
   flex: 1;
   margin-right: 10%;
+  font-size: 1.6rem;
+  white-space: break-spaces;
+  @media screen and (min-width:480px) and (max-width:767px) {
+    font-size: 1.4rem;
+  }
+  @media screen and (max-width: 479px) {
+    order: 1;
+    margin-top: 20px;
+    margin-right: 0;
+    font-size: 1rem;
+  }
 `;
 const ImgWrapper = styled("div")`
   position: relative;
@@ -19,6 +35,12 @@ const ImgWrapper = styled("div")`
     content: "";
     display: block;
     padding-top: 100%;
+  }
+  @media screen and (min-width:480px) and (max-width:767px) {
+  }
+  @media screen and (max-width: 479px) {
+    width: 30%;
+    order:0;
   }
 `;
 const Img = styled("img")`
