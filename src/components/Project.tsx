@@ -58,6 +58,17 @@ const Tag = styled("li")`
   border: #a5936e solid 1px;
   border-radius: 10px;
 `;
+
+const Link = styled("a")`
+  display: inline-block;
+  background-image: url("/portfolio/icon/link.png");
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+`
+
 interface IProjects {
   projects: IProject[] | undefined;
 }
@@ -73,7 +84,7 @@ function Project({ projects }: IProjects) {
               src={process.env.PUBLIC_URL + project.imgURL || ""}
             ></Img>
             <Info>
-              <Title>{project.title || ""}</Title>
+              <Title>{project.title || ""}{project.link && <Link href={project.link} title="프로젝트 링크"></Link>}</Title>
               <Summary>{project.summary || ""}</Summary>
               <Description>{project.description || ""}</Description>
               <Tags>
