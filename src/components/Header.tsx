@@ -20,6 +20,7 @@ const BackgroundVideo = styled("video")`
   height: auto;
 `;
 const Intro = styled("span")`
+  line-height: 5rem;
   position: absolute;
   top: 50%;
   left: 50%;
