@@ -59,13 +59,19 @@ margin-bottom: 10px;
 color: ${props => props.theme.primaryTextColor};
 `;
 const Description = styled("div")`
-color: ${props => props.theme.secondaryTextColor};`;
+  color: ${props => props.theme.secondaryTextColor};
+  margin: 30px 0px;
+`;
 const DescriptionTitle = styled.h4`
-font-weight: bold`;
+font-size: 2.3rem;
+font-weight: bold;
+margin-bottom: 10px;
+`;
 const DescriptionBody = styled.pre`
 white-space: break-spaces;
 margin-bottom: 10px;
-color: ${props => props.theme.secondaryTextColor};`;
+color: ${props => props.theme.secondaryTextColor};
+`;
 const Tags = styled.ul`
   margin: 10px 0px;
 `;
