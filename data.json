@@ -26,10 +26,7 @@
         "Recoil",
         "Framer-motion"
       ],
-      "links": {
-        "github": "https://github.com/c9u11/bulls-and-cows",
-        "page": "https://bullsandcows.online"
-      }
+      "link": "https://github.com/c9u11/bulls-and-cows"
     },
     {
       "imgURL": "/img/koen.png",
@@ -37,10 +34,7 @@
       "summary": "텍스트 한/영 변환 프로그램",
       "description": "Mac을 사용하며 한/영 변환이 잘 되지않아서 불편했던 경험이 있었기에 원하는 텍스트를 자동으로 변환해주는 프로그램을 만들었습니다. 현재는 git을 통해 배포하였으며 누구나 다운로드 받아 사용할 수 있습니다.",
       "tags": ["Electron", "Typescript", "RobotJS", "Nodejs"],
-      "links": {
-        "github": "https://github.com/c9u11/koen",
-        "page": "https://c9u11.github.io/koen-page/"
-      }
+      "link": "https://github.com/c9u11/koen"
     },
     {
       "imgURL": "/img/VODEditor.png",
